@@ -42,9 +42,8 @@
             height: 250px;
         }
 
-        /* Updated Segmented Control Styles for Frosted Glass Effect */
         .segmented-control {
-            background-color: rgba(229, 231, 235, 0.6); /* gray-200/60 */
+            background-color: rgba(229, 231, 235, 0.6);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -54,7 +53,7 @@
         }
         .segmented-control-button.active {
             background-color: white;
-            color: #1e3a8a; /* blue-800 */
+            color: #1e3a8a;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
             font-weight: 700;
         }
@@ -77,22 +76,22 @@
 
     <!-- Header -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold text-gray-800">Fund ABC Analysis</h1>
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="font-bold text-xl text-gray-900">FinValley</span>
                 </div>
                 <div class="hidden md:block">
-                    <nav class="flex items-center space-x-8">
-                        <a href="#imperative" class="text-gray-500 hover:text-gray-900 font-medium">The Imperative</a>
-                        <a href="#assumptions" class="text-gray-500 hover:text-gray-900 font-medium">Assumptions</a>
-                        <a href="#models" class="text-gray-500 hover:text-gray-900 font-medium">Models</a>
-                        <a href="#comparison" class="text-gray-500 hover:text-gray-900 font-medium">Comparison</a>
-                        <a href="#recommendation" class="text-gray-500 hover:text-gray-900 font-medium">Recommendation</a>
-                    </nav>
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#imperative" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">The Imperative</a>
+                        <a href="#assumptions" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Assumptions</a>
+                        <a href="#models" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Models</a>
+                        <a href="#comparison" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Comparison</a>
+                        <a href="#recommendation" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Recommendation</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 
     <main>
@@ -106,7 +105,7 @@
                     Evaluating three distinct models for the Fund ABC Continuation Vehicle to maximize value and align stakeholder interests for the next phase of growth.
                 </p>
                 <div class="mt-8">
-                    <a href="#comparison" class="inline-block bg-gray-900 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-800 transition-colors">View Comparison</a>
+                    <a href="#imperative" class="inline-block bg-gray-900 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-gray-800 transition-colors">View Comparison</a>
                 </div>
             </div>
         </section>
@@ -167,17 +166,15 @@
                     <p class="section-subtitle">Select the final Exit MOIC to observe the real-time impact on each model's stakeholder distributions below.</p>
                 </div>
 
-                <!-- MODIFIED SEGMENTED CONTROL -->
                 <div class="max-w-3xl mx-auto text-center mt-12 fade-in-section">
                     <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
-                        <div id="segmented-control" class="segmented-control flex w-full max-w-sm mx-auto rounded-xl p-1.5 space-x-1.5">
+                        <div class="segmented-control flex w-full max-w-sm mx-auto rounded-xl p-1.5 space-x-1.5">
                             <button data-index="0" class="segmented-control-button w-full text-center rounded-lg py-3 text-sm font-medium text-gray-600 focus:outline-none">1.50x</button>
                             <button data-index="1" class="segmented-control-button w-full text-center rounded-lg py-3 text-sm font-medium text-gray-600 focus:outline-none active">1.75x MOIC</button>
                             <button data-index="2" class="segmented-control-button w-full text-center rounded-lg py-3 text-sm font-medium text-gray-600 focus:outline-none">1.80x</button>
                         </div>
                     </div>
                 </div>
-                <!-- END OF MODIFICATION -->
 
                 <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
                     
@@ -287,6 +284,19 @@
                     <h2 class="section-title">At-a-Glance Comparison</h2>
                     <p class="section-subtitle" id="comparison-subtitle">A synthesis of the quantitative and qualitative findings, dynamically updated based on the selected MOIC.</p>
                 </div>
+
+                <!-- NEW: DUPLICATE SEGMENTED CONTROL -->
+                <div class="max-w-3xl mx-auto text-center my-12 fade-in-section">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                        <div class="segmented-control flex w-full max-w-sm mx-auto rounded-xl p-1.5 space-x-1.5">
+                            <button data-index="0" class="segmented-control-button w-full text-center rounded-lg py-3 text-sm font-medium text-gray-600 focus:outline-none">1.50x</button>
+                            <button data-index="1" class="segmented-control-button w-full text-center rounded-lg py-3 text-sm font-medium text-gray-600 focus:outline-none active">1.75x MOIC</button>
+                            <button data-index="2" class="segmented-control-button w-full text-center rounded-lg py-3 text-sm font-medium text-gray-600 focus:outline-none">1.80x</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF DUPLICATE -->
+
                 <div class="mt-12 flow-root">
                     <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
@@ -409,20 +419,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 entry.target.classList.add('is-visible');
             }
         });
-    }, {
-        rootMargin: '0px',
-        threshold: 0.1
-    });
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+    }, { rootMargin: '0px', threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
         });
     });
 
@@ -434,7 +437,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ]
     };
 
-    const controlButtons = document.querySelectorAll('.segmented-control-button');
+    const allControlButtons = document.querySelectorAll('.segmented-control-button');
     
     const gpTake1 = document.getElementById('gp-take-1'), gpTake2 = document.getElementById('gp-take-2'), gpTake3 = document.getElementById('gp-take-3');
     const tableGpBenefit1 = document.getElementById('table-gp-benefit-1'), tableGpBenefit2 = document.getElementById('table-gp-benefit-2'), tableGpBenefit3 = document.getElementById('table-gp-benefit-3');
@@ -480,13 +483,19 @@ document.addEventListener('DOMContentLoaded', function () {
         else { charts[canvasId] = new Chart(ctx, { type: 'bar', data: chartData, options: chartOptions }); }
     }
 
-    function updateDashboard(scenarioIndex) {
+    function updatePage(scenarioIndex) {
         const scenario = data.scenarios[scenarioIndex];
         
-        // Update button text content
-        controlButtons.forEach((button, index) => {
+        allControlButtons.forEach(button => {
+            const index = button.dataset.index;
             const currentScenario = data.scenarios[index];
-            button.textContent = (index == scenarioIndex) ? `${currentScenario.moic.toFixed(2)}x MOIC` : `${currentScenario.moic.toFixed(2)}x`;
+            button.textContent = `${currentScenario.moic.toFixed(2)}x`;
+            if (index == scenarioIndex) {
+                button.classList.add('active');
+                button.textContent += ' MOIC';
+            } else {
+                button.classList.remove('active');
+            }
         });
         
         gpTake1.textContent = `$${scenario.model1.gpTake.toFixed(1)}M`;
@@ -503,15 +512,13 @@ document.addEventListener('DOMContentLoaded', function () {
         tableNewLp1.textContent = `$${scenario.model1.newLp.toFixed(1)}M`; tableNewLp2.textContent = `$${scenario.model2.newLp.toFixed(1)}M`; tableNewLp3.textContent = `$${scenario.model3.newLp.toFixed(1)}M`;
     }
 
-    controlButtons.forEach(button => {
+    allControlButtons.forEach(button => {
         button.addEventListener('click', () => {
-            controlButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            updateDashboard(button.dataset.index);
+            updatePage(button.dataset.index);
         });
     });
 
-    updateDashboard(1); // Initialize with the middle scenario
+    updatePage(1);
 });
 </script>
 
