@@ -120,11 +120,18 @@
             max-width: 600px;
             color: #6e6e73;
         }
+        
+        .team-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
 
         .team-container {
             display: flex;
             gap: 40px;
-            margin-top: 80px;
         }
 
         .team-member-card {
@@ -142,14 +149,20 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
-        .team-member-card img {
-            width: 120px;
-            height: 120px;
+        .team-member-card .image-container {
+            width: 150px; /* Increased size */
+            height: 150px; /* Increased size */
             border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 3px solid #fff;
+            margin: 0 auto 20px auto;
+            border: 4px solid #fff;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden; /* Ensures image stays within circle */
+        }
+        
+        .team-member-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .team-member-card .caption {
@@ -222,6 +235,7 @@
             }
             #sec1 .header-text h1 { font-size: 3rem; }
             #sec1 .header-text h2 { font-size: 1.5rem; }
+            .team-heading { font-size: 2rem; }
         }
 
     </style>
@@ -263,26 +277,37 @@
                         We decided to present this solution not just as a PowerPoint and a pdf, but also in the form of this interactive webpage. If our solution is dynamic, so should be its presentation. Please click on any section in the sidebar to jump to a section of the webpage.
                     </p>
                 </div>
+                
+                <!-- "Meet the team" Heading Added -->
+                <h2 class="team-heading">Meet the team</h2>
 
                 <div class="team-container">
                     <div class="team-member-card">
-                        <img src="./rahul.jpg" alt="Team member Rahul">
+                        <!-- Image container added for better cropping control -->
+                        <div class="image-container">
+                            <img src="./rahul.jpg" alt="Team member Rahul">
+                        </div>
                         <p class="caption">Startup strategy and growth</p>
-                        <a href="#" class="linkedin-link" aria-label="Rahul's LinkedIn Profile">
+                        <!-- LinkedIn link made functional -->
+                        <a href="https://www.linkedin.com/in/rahul-lalwani-2707r/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Rahul's LinkedIn Profile">
                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
                         </a>
                     </div>
                     <div class="team-member-card">
-                        <img src="./prathamesh.jpg" alt="Team member Prathamesh">
+                        <div class="image-container">
+                            <img src="./prathamesh.jpg" alt="Team member Prathamesh">
+                        </div>
                         <p class="caption">Venture capital, research and analysis</p>
-                        <a href="#" class="linkedin-link" aria-label="Prathamesh's LinkedIn Profile">
+                        <a href="https://www.linkedin.com/in/prathamesh-tanna-a0666424b/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Prathamesh's LinkedIn Profile">
                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
                         </a>
                     </div>
                     <div class="team-member-card">
-                        <img src="./pranjal.jpg" alt="Team member Pranjal">
+                        <div class="image-container">
+                            <img src="./pranjal.jpg" alt="Team member Pranjal">
+                        </div>
                         <p class="caption">Analytics, Merit List (IIM), IITM DSC, Axis Bank</p>
-                        <a href="#" class="linkedin-link" aria-label="Pranjal's LinkedIn Profile">
+                        <a href="https://www.linkedin.com/in/pranjalparashar1/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Pranjal's LinkedIn Profile">
                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
                         </a>
                     </div>
@@ -296,4 +321,3 @@
 
 </body>
 </html>
-
