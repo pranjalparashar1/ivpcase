@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinValley 9.0 | Our Solution</title>
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter & Inter Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Inter+Display:wght@300&display=swap" rel="stylesheet">
 
     <style>
         /* ============================================ */
@@ -122,63 +122,66 @@
         }
         
         .team-heading {
+            font-family: 'Inter Display', sans-serif;
             font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-weight: 300;
+            color: #606060;
+            letter-spacing: -0.01em;
             margin-top: 80px;
             margin-bottom: 40px;
         }
 
-        .team-container {
-            display: flex;
-            gap: 40px;
-        }
-
-        .team-member-card {
+        /* Unified Team Card Styling */
+        .team-card-unified {
             background: var(--card-bg);
-            border-radius: 18px;
-            padding: 24px;
-            text-align: center;
+            border-radius: 24px; /* Slightly larger radius for a bigger card */
+            padding: 40px;
             box-shadow: 0 4px 20px var(--shadow-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 20px;
         }
         
-        .team-member-card:hover {
+        .team-card-unified:hover {
             transform: translateY(-8px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
-        .team-member-card .image-container {
-            width: 150px; /* Increased size */
-            height: 150px; /* Increased size */
-            border-radius: 50%;
-            margin: 0 auto 20px auto;
-            border: 4px solid #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            overflow: hidden; /* Ensures image stays within circle */
+        .team-member {
+            text-align: center;
+            flex: 1;
         }
         
-        .team-member-card img {
+        /* Image container is now just for sizing, no visuals */
+        .team-member .image-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px auto;
+        }
+        
+        .team-member img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            border-radius: 50%; /* Ensuring image is circular if not pre-cropped */
         }
 
-        .team-member-card .caption {
+        .team-member .caption {
             font-size: 1rem;
             font-weight: 500;
             margin-bottom: 16px;
         }
 
-        .team-member-card .linkedin-link svg {
+        .team-member .linkedin-link svg {
             width: 24px;
             height: 24px;
             fill: #0a66c2;
             transition: transform 0.2s ease;
         }
 
-        .team-member-card .linkedin-link:hover svg {
+        .team-member .linkedin-link:hover svg {
             transform: scale(1.1);
         }
         
@@ -199,7 +202,11 @@
             }
             #sec1 .header-text h1 { font-size: 4.5rem; }
             #sec1 .header-text h2 { font-size: 2rem; }
-            .team-container { flex-direction: column; }
+            .team-card-unified {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px; /* Increase gap for vertical stacking */
+            }
         }
 
         @media (max-width: 768px) {
@@ -278,38 +285,37 @@
                     </p>
                 </div>
                 
-                <!-- "Meet the team" Heading Added -->
                 <h2 class="team-heading">Meet the team</h2>
 
                 <div class="team-container">
-                    <div class="team-member-card">
-                        <!-- Image container added for better cropping control -->
-                        <div class="image-container">
-                            <img src="./rahul.jpg" alt="Team member Rahul">
+                    <div class="team-card-unified">
+                        <div class="team-member">
+                            <div class="image-container">
+                                <img src="./rahul.jpg" alt="Team member Rahul">
+                            </div>
+                            <p class="caption">Startup strategy and growth</p>
+                            <a href="https://www.linkedin.com/in/rahul-lalwani-2707r/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Rahul's LinkedIn Profile">
+                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
+                            </a>
                         </div>
-                        <p class="caption">Startup strategy and growth</p>
-                        <!-- LinkedIn link made functional -->
-                        <a href="https://www.linkedin.com/in/rahul-lalwani-2707r/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Rahul's LinkedIn Profile">
-                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
-                        </a>
-                    </div>
-                    <div class="team-member-card">
-                        <div class="image-container">
-                            <img src="./prathamesh.jpg" alt="Team member Prathamesh">
+                        <div class="team-member">
+                            <div class="image-container">
+                                <img src="./prathamesh.jpg" alt="Team member Prathamesh">
+                            </div>
+                            <p class="caption">Venture capital, research and analysis</p>
+                            <a href="https://www.linkedin.com/in/prathamesh-tanna-a0666424b/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Prathamesh's LinkedIn Profile">
+                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
+                            </a>
                         </div>
-                        <p class="caption">Venture capital, research and analysis</p>
-                        <a href="https://www.linkedin.com/in/prathamesh-tanna-a0666424b/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Prathamesh's LinkedIn Profile">
-                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
-                        </a>
-                    </div>
-                    <div class="team-member-card">
-                        <div class="image-container">
-                            <img src="./pranjal.jpg" alt="Team member Pranjal">
+                        <div class="team-member">
+                            <div class="image-container">
+                                <img src="./pranjal.jpg" alt="Team member Pranjal">
+                            </div>
+                            <p class="caption">Analytics, Merit List (IIM), IITM DSC, Axis Bank</p>
+                            <a href="https://www.linkedin.com/in/pranjalparashar1/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Pranjal's LinkedIn Profile">
+                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
+                            </a>
                         </div>
-                        <p class="caption">Analytics, Merit List (IIM), IITM DSC, Axis Bank</p>
-                        <a href="https://www.linkedin.com/in/pranjalparashar1/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Pranjal's LinkedIn Profile">
-                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
-                        </a>
                     </div>
                 </div>
             </section>
@@ -321,3 +327,4 @@
 
 </body>
 </html>
+
