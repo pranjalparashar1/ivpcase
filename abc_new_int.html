@@ -287,7 +287,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="section-title">At-a-Glance Comparison</h2>
-                    <p class="section-subtitle">A synthesis of the quantitative and qualitative findings across all three proposed structures, based on a 1.75x MOIC exit scenario.</p>
+                    <p class="section-subtitle" id="comparison-subtitle">A synthesis of the quantitative and qualitative findings, dynamically updated based on the selected MOIC.</p>
                 </div>
                 <div class="mt-12 flow-root">
                     <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -303,7 +303,7 @@
                                         </tr>
                                     </thead>
                                     <tbody class="divide-y divide-gray-200 bg-white">
-                                        <tr class="bg-gray-50/50"><td colspan="4" class="px-6 py-2 text-sm font-semibold text-gray-700">Quantitative Outcomes (at 1.75x MOIC)</td></tr>
+                                        <tr class="bg-gray-50/50"><td colspan="4" class="px-6 py-2 text-sm font-semibold text-gray-700" id="quantitative-outcomes-title">Quantitative Outcomes (at 1.75x MOIC)</td></tr>
                                         <tr>
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">GP Immediate Cash Carry</td>
                                             <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center font-semibold">$198.1M</td>
@@ -312,15 +312,21 @@
                                         </tr>
                                         <tr>
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Total GP Economic Benefit</td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">$300.5M</td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">$465.5M</td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-700 text-center font-bold text-lg bg-blue-50">$485.3M</td>
+                                            <td id="table-gp-benefit-1" class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">$300.5M</td>
+                                            <td id="table-gp-benefit-2" class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">$465.5M</td>
+                                            <td id="table-gp-benefit-3" class="whitespace-nowrap px-3 py-4 text-sm text-blue-700 text-center font-bold text-lg bg-blue-50">$485.3M</td>
                                         </tr>
                                         <tr>
                                             <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Rolling LP Total Value</td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">$640.3M</td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">$554.7M</td>
-                                            <td class="whitespace-nowrap px-3 py-4 text-sm text-blue-700 text-center font-bold text-lg bg-blue-50">$693.4M</td>
+                                            <td id="table-rolling-lp-1" class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">$640.3M</td>
+                                            <td id="table-rolling-lp-2" class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">$554.7M</td>
+                                            <td id="table-rolling-lp-3" class="whitespace-nowrap px-3 py-4 text-sm text-blue-700 text-center font-bold text-lg bg-blue-50">$693.4M</td>
+                                        </tr>
+                                         <tr>
+                                            <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">New LP Total Value</td>
+                                            <td id="table-new-lp-1" class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">$594.5M</td>
+                                            <td id="table-new-lp-2" class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">$515.1M</td>
+                                            <td id="table-new-lp-3" class="whitespace-nowrap px-3 py-4 text-sm text-blue-700 text-center font-bold text-lg bg-blue-50">$356.6M</td>
                                         </tr>
                                         
                                         <tr class="bg-gray-50/50"><td colspan="4" class="px-6 py-2 text-sm font-semibold text-gray-700">Qualitative Assessment</td></tr>
@@ -421,11 +427,25 @@ document.addEventListener('DOMContentLoaded', function () {
         ]
     };
 
+    // DOM Element selectors
     const slider = document.getElementById('moic-slider');
     const moicDisplay = document.getElementById('moic-display');
     const gpTake1 = document.getElementById('gp-take-1');
     const gpTake2 = document.getElementById('gp-take-2');
     const gpTake3 = document.getElementById('gp-take-3');
+    
+    // New selectors for the dynamic table
+    const tableGpBenefit1 = document.getElementById('table-gp-benefit-1');
+    const tableGpBenefit2 = document.getElementById('table-gp-benefit-2');
+    const tableGpBenefit3 = document.getElementById('table-gp-benefit-3');
+    const tableRollingLp1 = document.getElementById('table-rolling-lp-1');
+    const tableRollingLp2 = document.getElementById('table-rolling-lp-2');
+    const tableRollingLp3 = document.getElementById('table-rolling-lp-3');
+    const tableNewLp1 = document.getElementById('table-new-lp-1');
+    const tableNewLp2 = document.getElementById('table-new-lp-2');
+    const tableNewLp3 = document.getElementById('table-new-lp-3');
+    const quantOutcomesTitle = document.getElementById('quantitative-outcomes-title');
+
 
     let charts = {};
 
@@ -477,7 +497,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
     
-    // Updated chart colors to match the new design palette
     const chartColors = {
         gp: 'rgba(37, 99, 235, 0.85)',    // blue-600
         rollingLp: 'rgba(55, 65, 81, 0.85)', // gray-700
@@ -487,7 +506,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function createOrUpdateChart(canvasId, scenarioData) {
         const ctx = document.getElementById(canvasId).getContext('2d');
         const chartData = {
-            labels: [''], // No label on y-axis
+            labels: [''], 
             datasets: [
                 {
                     label: 'GP Benefit',
@@ -524,16 +543,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateDashboard(scenarioIndex) {
         const scenario = data.scenarios[scenarioIndex];
+        const moicFormatted = scenario.moic.toFixed(2);
         
-        moicDisplay.textContent = `${scenario.moic.toFixed(2)}x MOIC`;
-        
+        // Update main display and card values
+        moicDisplay.textContent = `${moicFormatted}x MOIC`;
         gpTake1.textContent = `$${scenario.model1.gpTake.toFixed(1)}M`;
         gpTake2.textContent = `$${scenario.model2.gpTake.toFixed(1)}M`;
         gpTake3.textContent = `$${scenario.model3.gpTake.toFixed(1)}M`;
 
+        // Update charts
         createOrUpdateChart('model1Chart', scenario.model1);
         createOrUpdateChart('model2Chart', scenario.model2);
         createOrUpdateChart('model3Chart', scenario.model3);
+        
+        // --- NEW: Update the comparison table ---
+        quantOutcomesTitle.textContent = `Quantitative Outcomes (at ${moicFormatted}x MOIC)`;
+        
+        // GP Benefit Row
+        tableGpBenefit1.textContent = `$${scenario.model1.gpTake.toFixed(1)}M`;
+        tableGpBenefit2.textContent = `$${scenario.model2.gpTake.toFixed(1)}M`;
+        tableGpBenefit3.textContent = `$${scenario.model3.gpTake.toFixed(1)}M`;
+        
+        // Rolling LP Row
+        tableRollingLp1.textContent = `$${scenario.model1.rollingLp.toFixed(1)}M`;
+        tableRollingLp2.textContent = `$${scenario.model2.rollingLp.toFixed(1)}M`;
+        tableRollingLp3.textContent = `$${scenario.model3.rollingLp.toFixed(1)}M`;
+
+        // New LP Row
+        tableNewLp1.textContent = `$${scenario.model1.newLp.toFixed(1)}M`;
+        tableNewLp2.textContent = `$${scenario.model2.newLp.toFixed(1)}M`;
+        tableNewLp3.textContent = `$${scenario.model3.newLp.toFixed(1)}M`;
     }
 
     slider.addEventListener('input', (event) => {
@@ -547,4 +586,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 </html>
-
