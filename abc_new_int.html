@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
             @apply mt-3 text-lg text-gray-500 max-w-2xl mx-auto;
         }
         .card {
-            @apply bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+            @apply bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden;
         }
         .rating-high { @apply bg-emerald-100 text-emerald-800; }
         .rating-medium { @apply bg-amber-100 text-amber-800; }
@@ -36,41 +36,40 @@
             background-image: linear-gradient(45deg, #0f172a 0%, #1e293b 100%);
         }
         
-        /* Styles for added interactive elements */
         .chart-container {
             position: relative;
             width: 100%;
-            height: 250px; /* Adjusted height for new layout */
+            height: 250px;
         }
-        
-        /* Apple-esque Slider Styles */
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 24px;
-            height: 24px;
-            background: #007AFF; /* Apple blue */
-            border-radius: 50%;
-            cursor: pointer;
-            border: 4px solid #ffffff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-top: -9px; /* Vertically center thumb on track */
-            transition: background 0.2s;
+
+        /* Updated Segmented Control Styles for Frosted Glass Effect */
+        .segmented-control {
+            background-color: rgba(229, 231, 235, 0.6); /* gray-200/60 */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        input[type="range"]::-webkit-slider-thumb:hover {
-            background: #0056b3; 
+        .segmented-control-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        input[type="range"]::-moz-range-thumb {
-            width: 24px;
-            height: 24px;
-            background: #007AFF; /* Apple blue */
-            border-radius: 50%;
-            cursor: pointer;
-            border: 4px solid #ffffff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        .segmented-control-button.active {
+            background-color: white;
+            color: #1e3a8a; /* blue-800 */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+            font-weight: 700;
         }
-         input[type="range"]::-moz-range-thumb:hover {
-             background: #0056b3;
+        .segmented-control-button:not(.active):hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -98,7 +97,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative gradient-bg">
+        <section class="relative gradient-bg fade-in-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tighter">
                     A Strategic Analysis of Carried Interest Structures.
@@ -113,20 +112,20 @@
         </section>
 
         <!-- The Strategic Imperative -->
-        <section id="imperative" class="py-12 md:py-16">
+        <section id="imperative" class="py-12 md:py-16 fade-in-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="section-title">The Strategic Imperative</h2>
                 <p class="section-subtitle">Fund ABC is at a critical juncture. A forced liquidation risks destroying value, while a Continuation Vehicle offers a path to maximize returns on its high-potential assets.</p>
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 fade-in-section">
                         <h3 class="text-lg font-semibold text-gray-900">End of Fund Life</h3>
                         <p class="mt-2 text-gray-600">As a 10-year vintage fund, Fund ABC is nearing its term end, compelling a liquidation of assets that are poised for significant future growth.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 fade-in-section" style="transition-delay: 150ms;">
                         <h3 class="text-lg font-semibold text-gray-900">Unfavorable Market</h3>
                         <p class="mt-2 text-gray-600">Current stalled IPO and muted M&A markets create a challenging exit environment, making a forced sale value-destructive for investors.</p>
                     </div>
-                    <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 fade-in-section" style="transition-delay: 300ms;">
                         <h3 class="text-lg font-semibold text-gray-900">The CV Solution</h3>
                         <p class="mt-2 text-gray-600">A GP-led Continuation Vehicle provides liquidity for exiting LPs while allowing patient investors to capture the substantial unrealized value.</p>
                     </div>
@@ -135,24 +134,24 @@
         </section>
 
         <!-- Base Case Assumptions -->
-        <section id="assumptions" class="py-12 md:py-16 bg-white">
+        <section id="assumptions" class="py-12 md:py-16 bg-white fade-in-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="section-title">Transaction Base Case Assumptions</h2>
                 <p class="section-subtitle">This analysis is based on the T+5 financial forecast. The following core assumptions frame the transaction and drive the financial models. All values are in millions of USD.</p>
                 <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center fade-in-section">
                         <p class="text-sm text-gray-500">Transaction Value (NAV)</p>
                         <p class="text-3xl font-bold text-gray-800 mt-1">$566.0M</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center fade-in-section" style="transition-delay: 150ms;">
                         <p class="text-sm text-gray-500">Original Paid-in Capital</p>
                         <p class="text-3xl font-bold text-gray-800 mt-1">$1,415.0M</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center fade-in-section" style="transition-delay: 300ms;">
                         <p class="text-sm text-gray-500">GP Crystallized Carry</p>
                         <p class="text-3xl font-bold text-gray-800 mt-1">$198.1M</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center fade-in-section" style="transition-delay: 450ms;">
                         <p class="text-sm text-gray-500">New Capital for Liquidity</p>
                         <p class="text-3xl font-bold text-gray-800 mt-1">$169.8M</p>
                     </div>
@@ -161,32 +160,31 @@
         </section>
         
         <!-- Models Analyzed & Interactive Simulator -->
-        <section id="models" class="py-12 md:py-16">
+        <section id="models" class="py-12 md:py-16 fade-in-section">
              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="section-title">Three Models, Three Outcomes</h2>
-                    <p class="section-subtitle">Use the slider to adjust the final Exit MOIC and observe the real-time impact on each model's stakeholder distributions below.</p>
+                    <p class="section-subtitle">Select the final Exit MOIC to observe the real-time impact on each model's stakeholder distributions below.</p>
                 </div>
 
-                <!-- MOVED SIMULATOR HERE -->
-                <div class="max-w-3xl mx-auto text-center mt-12">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-                        <div class="flex items-center justify-center space-x-4">
-                            <span class="font-medium text-gray-600">1.50x</span>
-                            <input id="moic-slider" type="range" min="0" max="2" step="1" value="1" class="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer">
-                            <span class="font-medium text-gray-600">1.80x</span>
+                <!-- MODIFIED SEGMENTED CONTROL -->
+                <div class="max-w-3xl mx-auto text-center mt-12 fade-in-section">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+                        <div id="segmented-control" class="segmented-control flex w-full max-w-sm mx-auto rounded-xl p-1.5 space-x-1.5">
+                            <button data-index="0" class="segmented-control-button w-full text-center rounded-lg py-3 text-sm font-medium text-gray-600 focus:outline-none">1.50x</button>
+                            <button data-index="1" class="segmented-control-button w-full text-center rounded-lg py-3 text-sm font-medium text-gray-600 focus:outline-none active">1.75x MOIC</button>
+                            <button data-index="2" class="segmented-control-button w-full text-center rounded-lg py-3 text-sm font-medium text-gray-600 focus:outline-none">1.80x</button>
                         </div>
-                        <p class="text-center mt-4 font-bold text-4xl text-blue-600" id="moic-display">1.75x MOIC</p>
                     </div>
                 </div>
-                <!-- END OF MOVED SIMULATOR -->
+                <!-- END OF MODIFICATION -->
 
                 <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
                     
                     <!-- Model 1: Reset Carry -->
-                    <div class="card flex flex-col">
+                    <div class="card flex flex-col fade-in-section">
                         <div class="p-8 flex-grow">
-                            <div class="h-9"></div> <!-- Spacer for chart alignment -->
+                            <div class="h-9"></div>
                             <h3 class="text-2xl font-bold text-gray-900">1. 'Reset Carry'</h3>
                             <p class="mt-4 text-gray-600">A clean break. The GP's crystallized carry is paid out in cash, and a single new waterfall is established for all investors in the new vehicle.</p>
                             <div class="mt-6 chart-container">
@@ -216,9 +214,9 @@
                     </div>
 
                     <!-- Model 2: Catchup Carry Only -->
-                    <div class="card flex flex-col">
+                    <div class="card flex flex-col fade-in-section" style="transition-delay: 150ms;">
                         <div class="p-8 flex-grow">
-                            <div class="h-9"></div> <!-- Spacer for chart alignment -->
+                            <div class="h-9"></div>
                             <h3 class="text-2xl font-bold text-gray-900">2. 'Catchup Carry Only'</h3>
                             <p class="mt-4 text-gray-600">A GP-aggressive model. The 8% preferred return is removed, radically accelerating GP economics after the return of capital.</p>
                              <div class="mt-6 chart-container">
@@ -248,7 +246,7 @@
                     </div>
 
                     <!-- Model 3: Blended Carry -->
-                     <div class="card flex flex-col ring-2 ring-blue-500">
+                     <div class="card flex flex-col ring-2 ring-blue-500 fade-in-section" style="transition-delay: 300ms;">
                         <div class="p-8 flex-grow">
                             <span class="inline-block bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">RECOMMENDED</span>
                             <h3 class="text-2xl font-bold text-gray-900">3. 'Blended Carry'</h3>
@@ -283,7 +281,7 @@
         </section>
 
         <!-- Comparative Analysis Matrix -->
-        <section id="comparison" class="py-12 md:py-16 bg-white">
+        <section id="comparison" class="py-12 md:py-16 bg-white fade-in-section">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="section-title">At-a-Glance Comparison</h2>
@@ -358,7 +356,7 @@
         </section>
         
         <!-- Definitive Recommendation -->
-        <section id="recommendation" class="py-12 md:py-16">
+        <section id="recommendation" class="py-12 md:py-16 fade-in-section">
             <div class="relative recommendation-gradient rounded-3xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-white">
                 <div class="text-center">
                     <p class="text-base font-semibold text-blue-400">Definitive Recommendation</p>
@@ -368,21 +366,21 @@
                     <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-300">This model is unequivocally superior, offering the most robust framework for aligning interests, ensuring fairness, and guaranteeing the market viability of the Continuation Vehicle.</p>
                 </div>
                 <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                    <div>
+                    <div class="fade-in-section">
                         <div class="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-white/10">
                             <svg class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
                         </div>
                         <h3 class="mt-5 text-xl font-semibold">Maximum Alignment</h3>
                         <p class="mt-2 text-gray-400">A 100% GP rollover provides the strongest possible "skin in the game," directly linking the GP's financial success to that of its partners.</p>
                     </div>
-                    <div>
+                    <div class="fade-in-section" style="transition-delay: 150ms;">
                         <div class="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-white/10">
                             <svg class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>
                         </div>
                         <h3 class="mt-5 text-xl font-semibold">Unquestionable Fairness</h3>
                         <p class="mt-2 text-gray-400">The "status quo" option for rolling LPs honors their long-term commitment, a practical necessity to secure the 70% participation required.</p>
                     </div>
-                    <div>
+                    <div class="fade-in-section" style="transition-delay: 300ms;">
                         <div class="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-white/10">
                            <svg class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
                         </div>
@@ -404,92 +402,61 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
+    const sections = document.querySelectorAll('.fade-in-section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, {
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
     const data = {
         scenarios: [
-            {
-                moic: 1.50,
-                model1: { gpTake: 262.3, rollingLp: 561.0, newLp: 520.9 },
-                model2: { gpTake: 427.3, rollingLp: 475.4, newLp: 441.5 },
-                model3: { gpTake: 467.0, rollingLp: 594.3, newLp: 283.0 }
-            },
-            {
-                moic: 1.75,
-                model1: { gpTake: 300.5, rollingLp: 640.3, newLp: 594.5 },
-                model2: { gpTake: 465.5, rollingLp: 554.7, newLp: 515.1 },
-                model3: { gpTake: 485.3, rollingLp: 693.4, newLp: 356.6 }
-            },
-            {
-                moic: 1.80,
-                model1: { gpTake: 308.1, rollingLp: 656.1, newLp: 609.2 },
-                model2: { gpTake: 473.2, rollingLp: 570.5, newLp: 529.8 },
-                model3: { gpTake: 489.0, rollingLp: 713.2, newLp: 371.3 }
-            }
+            { moic: 1.50, model1: { gpTake: 262.3, rollingLp: 561.0, newLp: 520.9 }, model2: { gpTake: 427.3, rollingLp: 475.4, newLp: 441.5 }, model3: { gpTake: 467.0, rollingLp: 594.3, newLp: 283.0 }},
+            { moic: 1.75, model1: { gpTake: 300.5, rollingLp: 640.3, newLp: 594.5 }, model2: { gpTake: 465.5, rollingLp: 554.7, newLp: 515.1 }, model3: { gpTake: 485.3, rollingLp: 693.4, newLp: 356.6 }},
+            { moic: 1.80, model1: { gpTake: 308.1, rollingLp: 656.1, newLp: 609.2 }, model2: { gpTake: 473.2, rollingLp: 570.5, newLp: 529.8 }, model3: { gpTake: 489.0, rollingLp: 713.2, newLp: 371.3 }}
         ]
     };
 
-    // DOM Element selectors
-    const slider = document.getElementById('moic-slider');
-    const moicDisplay = document.getElementById('moic-display');
-    const gpTake1 = document.getElementById('gp-take-1');
-    const gpTake2 = document.getElementById('gp-take-2');
-    const gpTake3 = document.getElementById('gp-take-3');
+    const controlButtons = document.querySelectorAll('.segmented-control-button');
     
-    // New selectors for the dynamic table
-    const tableGpBenefit1 = document.getElementById('table-gp-benefit-1');
-    const tableGpBenefit2 = document.getElementById('table-gp-benefit-2');
-    const tableGpBenefit3 = document.getElementById('table-gp-benefit-3');
-    const tableRollingLp1 = document.getElementById('table-rolling-lp-1');
-    const tableRollingLp2 = document.getElementById('table-rolling-lp-2');
-    const tableRollingLp3 = document.getElementById('table-rolling-lp-3');
-    const tableNewLp1 = document.getElementById('table-new-lp-1');
-    const tableNewLp2 = document.getElementById('table-new-lp-2');
-    const tableNewLp3 = document.getElementById('table-new-lp-3');
+    const gpTake1 = document.getElementById('gp-take-1'), gpTake2 = document.getElementById('gp-take-2'), gpTake3 = document.getElementById('gp-take-3');
+    const tableGpBenefit1 = document.getElementById('table-gp-benefit-1'), tableGpBenefit2 = document.getElementById('table-gp-benefit-2'), tableGpBenefit3 = document.getElementById('table-gp-benefit-3');
+    const tableRollingLp1 = document.getElementById('table-rolling-lp-1'), tableRollingLp2 = document.getElementById('table-rolling-lp-2'), tableRollingLp3 = document.getElementById('table-rolling-lp-3');
+    const tableNewLp1 = document.getElementById('table-new-lp-1'), tableNewLp2 = document.getElementById('table-new-lp-2'), tableNewLp3 = document.getElementById('table-new-lp-3');
     const quantOutcomesTitle = document.getElementById('quantitative-outcomes-title');
-
 
     let charts = {};
 
     const chartOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        indexAxis: 'y',
-        scales: {
-            x: {
-                stacked: true,
-                title: { display: false },
-                grid: { display: false },
-                ticks: { display: false }
-            },
-            y: {
-                stacked: true,
-                grid: { display: false },
-                ticks: { display: false }
-            }
-        },
+        responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+        scales: { x: { stacked: true, display: false }, y: { stacked: true, display: false } },
         plugins: {
-            legend: {
-                position: 'bottom',
-                labels: {
-                    boxWidth: 12,
-                    padding: 20,
-                    font: { size: 12 }
-                }
-            },
+            legend: { position: 'bottom', labels: { boxWidth: 12, padding: 20, font: { size: 12 } } },
             tooltip: {
-                backgroundColor: '#0f172a',
-                titleFont: { weight: 'bold' },
-                bodyFont: { size: 14 },
-                padding: 12,
-                cornerRadius: 8,
+                backgroundColor: '#0f172a', titleFont: { weight: 'bold' }, bodyFont: { size: 14 },
+                padding: 12, cornerRadius: 8,
                 callbacks: {
                     label: function(context) {
                         let label = context.dataset.label || '';
-                        if (label) {
-                            label += ': ';
-                        }
-                        if (context.parsed.x !== null) {
-                            label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.x) + 'M';
-                        }
+                        if (label) { label += ': '; }
+                        if (context.parsed.x !== null) { label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.x) + 'M'; }
                         return label;
                     }
                 }
@@ -497,92 +464,57 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
     
-    const chartColors = {
-        gp: 'rgba(37, 99, 235, 0.85)',    // blue-600
-        rollingLp: 'rgba(55, 65, 81, 0.85)', // gray-700
-        newLp: 'rgba(156, 163, 175, 0.85)'   // gray-400
-    };
+    const chartColors = { gp: 'rgba(37, 99, 235, 0.85)', rollingLp: 'rgba(55, 65, 81, 0.85)', newLp: 'rgba(156, 163, 175, 0.85)' };
 
     function createOrUpdateChart(canvasId, scenarioData) {
         const ctx = document.getElementById(canvasId).getContext('2d');
         const chartData = {
             labels: [''], 
             datasets: [
-                {
-                    label: 'GP Benefit',
-                    data: [scenarioData.gpTake],
-                    backgroundColor: chartColors.gp,
-                    borderRadius: 4
-                },
-                {
-                    label: 'Rolling LPs',
-                    data: [scenarioData.rollingLp],
-                    backgroundColor: chartColors.rollingLp,
-                    borderRadius: 4
-                },
-                {
-                    label: 'New LPs',
-                    data: [scenarioData.newLp],
-                    backgroundColor: chartColors.newLp,
-                    borderRadius: 4
-                }
+                { label: 'GP Benefit', data: [scenarioData.gpTake], backgroundColor: chartColors.gp, borderRadius: 4 },
+                { label: 'Rolling LPs', data: [scenarioData.rollingLp], backgroundColor: chartColors.rollingLp, borderRadius: 4 },
+                { label: 'New LPs', data: [scenarioData.newLp], backgroundColor: chartColors.newLp, borderRadius: 4 }
             ]
         };
-
-        if (charts[canvasId]) {
-            charts[canvasId].data = chartData;
-            charts[canvasId].update();
-        } else {
-            charts[canvasId] = new Chart(ctx, {
-                type: 'bar',
-                data: chartData,
-                options: chartOptions
-            });
-        }
+        if (charts[canvasId]) { charts[canvasId].data = chartData; charts[canvasId].update(); } 
+        else { charts[canvasId] = new Chart(ctx, { type: 'bar', data: chartData, options: chartOptions }); }
     }
 
     function updateDashboard(scenarioIndex) {
         const scenario = data.scenarios[scenarioIndex];
-        const moicFormatted = scenario.moic.toFixed(2);
         
-        // Update main display and card values
-        moicDisplay.textContent = `${moicFormatted}x MOIC`;
+        // Update button text content
+        controlButtons.forEach((button, index) => {
+            const currentScenario = data.scenarios[index];
+            button.textContent = (index == scenarioIndex) ? `${currentScenario.moic.toFixed(2)}x MOIC` : `${currentScenario.moic.toFixed(2)}x`;
+        });
+        
         gpTake1.textContent = `$${scenario.model1.gpTake.toFixed(1)}M`;
         gpTake2.textContent = `$${scenario.model2.gpTake.toFixed(1)}M`;
         gpTake3.textContent = `$${scenario.model3.gpTake.toFixed(1)}M`;
 
-        // Update charts
         createOrUpdateChart('model1Chart', scenario.model1);
         createOrUpdateChart('model2Chart', scenario.model2);
         createOrUpdateChart('model3Chart', scenario.model3);
         
-        // --- NEW: Update the comparison table ---
-        quantOutcomesTitle.textContent = `Quantitative Outcomes (at ${moicFormatted}x MOIC)`;
-        
-        // GP Benefit Row
-        tableGpBenefit1.textContent = `$${scenario.model1.gpTake.toFixed(1)}M`;
-        tableGpBenefit2.textContent = `$${scenario.model2.gpTake.toFixed(1)}M`;
-        tableGpBenefit3.textContent = `$${scenario.model3.gpTake.toFixed(1)}M`;
-        
-        // Rolling LP Row
-        tableRollingLp1.textContent = `$${scenario.model1.rollingLp.toFixed(1)}M`;
-        tableRollingLp2.textContent = `$${scenario.model2.rollingLp.toFixed(1)}M`;
-        tableRollingLp3.textContent = `$${scenario.model3.rollingLp.toFixed(1)}M`;
-
-        // New LP Row
-        tableNewLp1.textContent = `$${scenario.model1.newLp.toFixed(1)}M`;
-        tableNewLp2.textContent = `$${scenario.model2.newLp.toFixed(1)}M`;
-        tableNewLp3.textContent = `$${scenario.model3.newLp.toFixed(1)}M`;
+        quantOutcomesTitle.textContent = `Quantitative Outcomes (at ${scenario.moic.toFixed(2)}x MOIC)`;
+        tableGpBenefit1.textContent = `$${scenario.model1.gpTake.toFixed(1)}M`; tableGpBenefit2.textContent = `$${scenario.model2.gpTake.toFixed(1)}M`; tableGpBenefit3.textContent = `$${scenario.model3.gpTake.toFixed(1)}M`;
+        tableRollingLp1.textContent = `$${scenario.model1.rollingLp.toFixed(1)}M`; tableRollingLp2.textContent = `$${scenario.model2.rollingLp.toFixed(1)}M`; tableRollingLp3.textContent = `$${scenario.model3.rollingLp.toFixed(1)}M`;
+        tableNewLp1.textContent = `$${scenario.model1.newLp.toFixed(1)}M`; tableNewLp2.textContent = `$${scenario.model2.newLp.toFixed(1)}M`; tableNewLp3.textContent = `$${scenario.model3.newLp.toFixed(1)}M`;
     }
 
-    slider.addEventListener('input', (event) => {
-        updateDashboard(event.target.value);
+    controlButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            controlButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            updateDashboard(button.dataset.index);
+        });
     });
 
-    // Initialize dashboard with the middle (1.75x MOIC) scenario
-    updateDashboard(1);
+    updateDashboard(1); // Initialize with the middle scenario
 });
 </script>
 
 </body>
 </html>
+
