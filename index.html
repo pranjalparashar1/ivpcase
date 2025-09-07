@@ -17,9 +17,9 @@
         :root {
             --background-color: #f5f5f7;
             --text-color: #1d1d1f;
-            --sidebar-bg: #e8e8ed;
-            --sidebar-link-color: #515154;
-            --sidebar-link-hover-color: #000;
+            --sidebar-bg: #161617;
+            --sidebar-link-color: #a1a1a6;
+            --sidebar-link-hover-color: #ffffff;
             --card-bg: #ffffff;
             --shadow-color: rgba(0, 0, 0, 0.05);
             --primary-blue: #007aff;
@@ -82,34 +82,60 @@
             color: var(--sidebar-link-hover-color);
             font-weight: 600;
         }
+        
+        .sidebar-footer {
+            margin-top: auto;
+            padding-top: 40px;
+            font-family: 'Inter Display', sans-serif;
+            font-weight: 300;
+        }
+        .sidebar-footer .team-name {
+            font-size: 1rem;
+            color: #a1a1a6;
+        }
+        .sidebar-footer .school-name {
+            font-size: 0.8rem;
+            color: #6e6e73;
+        }
+
 
         .main-content {
-            margin-left: 280px; /* Same as sidebar width */
+            margin-left: 280px; 
             width: calc(100% - 280px);
+            min-height: 100vh;
+            display: flex;
+            align-items: center; 
+            justify-content: flex-start;
         }
 
         .content-section {
-            min-height: 100vh;
-            padding: 80px 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 0 60px 0 30px;
+            width: 100%;
+            max-width: 1100px;
         }
         
         /* ============================================ */
         /* SECTION-SPECIFIC STYLES                     */
         /* ============================================ */
         
-        /* Welcome Section (sec1) */
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            display: inline-block;
+        }
+
         #sec1 .header-text h1 {
-            font-size: 6rem;
+            font-size: 5rem;
             font-weight: 800;
             letter-spacing: -0.04em;
             margin-bottom: 16px;
         }
 
         #sec1 .header-text h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 600;
             letter-spacing: -0.02em;
             margin-bottom: 24px;
@@ -117,31 +143,34 @@
 
         #sec1 .header-text p {
             font-size: 1.1rem;
-            max-width: 600px;
+            max-width: 880px;
             color: #6e6e73;
         }
         
         .team-heading {
-            font-family: 'Inter Display', sans-serif;
-            font-size: 2.5rem;
+            font-family: 'Inter Display Light', sans-serif;
+            font-size: 1.55rem;
             font-weight: 300;
             color: #606060;
             letter-spacing: -0.01em;
-            margin-top: 80px;
-            margin-bottom: 40px;
+            margin-top: 40px;
+            margin-bottom: 10px;
         }
 
-        /* Unified Team Card Styling */
         .team-card-unified {
             background: var(--card-bg);
-            border-radius: 24px; /* Slightly larger radius for a bigger card */
-            padding: 40px;
+            border-radius: 24px;
+            /* CHANGE: Reduced vertical padding by 20% (40px -> 32px) */
+            padding: 32px 40px;
             box-shadow: 0 4px 20px var(--shadow-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             justify-content: space-around;
-            align-items: flex-start;
+            /* CHANGE: Aligned items to center to balance the new vertical space */
+            align-items: center;
             gap: 20px;
+            max-width: 880px;
+            margin-left: 0;
         }
         
         .team-card-unified:hover {
@@ -154,7 +183,6 @@
             flex: 1;
         }
         
-        /* Image container is now just for sizing, no visuals */
         .team-member .image-container {
             width: 120px;
             height: 120px;
@@ -165,13 +193,21 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            border-radius: 50%; /* Ensuring image is circular if not pre-cropped */
+            border-radius: 50%;
+        }
+
+        .team-member-name {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: var(--text-color);
         }
 
         .team-member .caption {
             font-size: 1rem;
             font-weight: 500;
             margin-bottom: 16px;
+            color: #606060;
         }
 
         .team-member .linkedin-link svg {
@@ -198,14 +234,18 @@
                 width: calc(100% - 220px);
             }
             .content-section {
-                padding: 60px 40px;
+                padding: 0 40px;
             }
-            #sec1 .header-text h1 { font-size: 4.5rem; }
-            #sec1 .header-text h2 { font-size: 2rem; }
+            #sec1 .header-text h1 { font-size: 4rem; }
+            #sec1 .header-text h2 { font-size: 1.75rem; }
             .team-card-unified {
                 flex-direction: column;
                 align-items: center;
-                gap: 40px; /* Increase gap for vertical stacking */
+                gap: 40px;
+                max-width: 100%;
+            }
+            #sec1 .header-text p {
+                max-width: 100%;
             }
         }
 
@@ -221,7 +261,11 @@
                 border-bottom: 1px solid #dcdce1;
                 padding: 20px;
                 flex-direction: row;
-                justify-content: center;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .sidebar-nav {
+                flex-grow: 1;
             }
             .sidebar-nav ul {
                 display: flex;
@@ -233,16 +277,25 @@
                 margin: 0;
                 white-space: nowrap;
             }
+            .sidebar-footer {
+                margin-top: 0;
+                padding-top: 0;
+                text-align: right;
+                white-space: nowrap;
+            }
             .main-content {
                 margin-left: 0;
                 width: 100%;
+                min-height: auto;
+                padding: 40px 0;
+                 justify-content: center;
             }
              .content-section {
-                padding: 40px 20px;
+                padding: 0 20px;
             }
             #sec1 .header-text h1 { font-size: 3rem; }
             #sec1 .header-text h2 { font-size: 1.5rem; }
-            .team-heading { font-size: 2rem; }
+            .team-heading { font-size: 1rem; }
         }
 
     </style>
@@ -258,13 +311,16 @@
             <div class="sidebar-nav">
                 <ul>
                     <li><a href="index.html" class="active">Welcome</a></li>
-                    <li><a href="abc_new_int.html" target="_blank" rel="noopener noreferrer">Solutions for fund ABC</a></li>
-                    <li><a href="xyz.html" target="_blank" rel="noopener noreferrer">Solutions for fund XYZ</a></li>
-                    <li><a href="token.html" target="_blank" rel="noopener noreferrer">Solutions for the new fund</a></li>
-                    <li><a href="goldensource.html" target="blank" rel="noopener noreferrer">Solutions for operations</a></li>
-                    <li><a href="addons.html" target="blank" rel="noopener noreferrer">Add-ons</a></li>
-                    <li><a href="darkgolden.html" target="blank" rel="noopener noreferrer">Dark test</a></li>
+                    <li><a href="abc_new_int.html">Solutions for fund ABC</a></li>
+                    <li><a href="xyz.html">Solutions for fund XYZ</a></li>
+                    <li><a href="token.html">Solutions for the new fund</a></li>
+                    <li><a href="goldensource.html">Solutions for operations</a></li>
+                    <li><a href="addons.html">Add-ons</a></li>
                 </ul>
+            </div>
+            <div class="sidebar-footer">
+                <p class="team-name">Team Purple Reign</p>
+                <p class="school-name">IIM Nagpur</p>
             </div>
         </nav>
         <!-- ============================================ -->
@@ -279,8 +335,8 @@
             <!-- ============================================ -->
             <section id="sec1" class="content-section">
                 <div class="header-text">
-                    <h1>Hi.</h1>
-                    <h2>Welcome to our solution for FinValley 9.0</h2>
+                    <h1 class="gradient-text">FinValley 9.0</h1>
+                    <h2>Presenting our solution for the case study</h2>
                     <p>
                         We decided to present this solution not just as a PowerPoint and a pdf, but also in the form of this interactive webpage. If our solution is dynamic, so should be its presentation. Please click on any section in the sidebar to jump to a section of the webpage.
                     </p>
@@ -294,6 +350,7 @@
                             <div class="image-container">
                                 <img src="./rahul.jpg" alt="Team member Rahul">
                             </div>
+                            <p class="team-member-name">Rahul Lalwani</p>
                             <p class="caption">Startup strategy and growth</p>
                             <a href="https://www.linkedin.com/in/rahul-lalwani-2707r/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Rahul's LinkedIn Profile">
                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
@@ -303,7 +360,8 @@
                             <div class="image-container">
                                 <img src="./prathamesh.jpg" alt="Team member Prathamesh">
                             </div>
-                            <p class="caption">Venture capital, research and analysis</p>
+                            <p class="team-member-name">Prathamesh Tanna</p>
+                            <p class="caption">VC Research and Investments, Sparrow Capital</p>
                             <a href="https://www.linkedin.com/in/prathamesh-tanna-a0666424b/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Prathamesh's LinkedIn Profile">
                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
                             </a>
@@ -312,6 +370,7 @@
                             <div class="image-container">
                                 <img src="./pranjal.jpg" alt="Team member Pranjal">
                             </div>
+                            <p class="team-member-name">Pranjal Parashar</p>
                             <p class="caption">Analytics, Merit List (IIM), IITM DSC, Axis Bank</p>
                             <a href="https://www.linkedin.com/in/pranjalparashar1/" target="_blank" rel="noopener noreferrer" class="linkedin-link" aria-label="Pranjal's LinkedIn Profile">
                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 114.75 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.64 1.64 0 0013 14.19a1.65 1.65 0 00.06.66V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.34.86 3.34 3.93z"></path></svg>
