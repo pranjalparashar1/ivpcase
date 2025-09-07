@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinaValley | Tokenized Private Markets Solution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #374151;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient-bg {
+             background-image: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+        }
+        .card, .feature-card {
+             background-color: #ffffff;
+             border: 1px solid #e5e7eb;
+             border-radius: 1.5rem;
+             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+             transition: all 0.3s ease-in-out;
+        }
+        .card:hover, .feature-card:hover {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transform: translateY(-4px);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #4f46e5, #a855f7);
+            color: white;
+        }
+        .feature-icon {
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Navigation -->
+    <header id="header" class="glass-nav fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+             <h1 class="text-xl font-bold tracking-tighter text-gray-900">FinaValley <span class="gradient-text">Solutions</span></h1>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#dashboards" class="text-gray-500 hover:text-gray-900 transition-colors">Dashboards</a>
+                <a href="#transparency" class="text-gray-500 hover:text-gray-900 transition-colors">Transparency</a>
+                <a href="#ai" class="text-gray-500 hover:text-gray-900 transition-colors">AI Edge</a>
+                <a href="#roadmap" class="text-gray-500 hover:text-gray-900 transition-colors">Roadmap</a>
+            </nav>
+            <button class="md:hidden text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center text-center hero-gradient-bg overflow-hidden">
+            <div class="container mx-auto px-6 py-24 pt-32">
+                 <div class="fade-in">
+                    <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-gray-900">
+                        The Future of Private Markets.
+                    </h2>
+                     <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight gradient-text mb-6">
+                        Radically Transparent. Intelligently Powered.
+                    </h2>
+                    <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 mb-10">
+                        A showcase of institutional-grade reporting, on-chain transparency, and predictive AI designed to unlock efficiency, liquidity, and trust for GPs and LPs in tokenized private markets.
+                    </p>
+                     <a href="#dashboards"
+                        class="bg-gray-900 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 inline-block">
+                        Explore the Solution
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Feature Section 1: Dashboards -->
+        <section id="dashboards" class="py-20 md:py-32 bg-white border-y border-gray-200">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h3 class="text-sm font-bold uppercase text-indigo-600 tracking-widest">Unified Command Center</h3>
+                    <p class="mt-2 text-4xl md:text-5xl font-bold tracking-tight text-gray-900">Institutional-Grade Reporting</p>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">One platform, two experiences. A unified command center for GPs and a transparent portal for LPs.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="fade-in">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">GP Command & Control</h3>
+                        <p class="text-gray-600 mb-6">Aggregate portfolio data into a single source of truth. Monitor performance, manage liquidity, and automate capital calls with precision and ease.</p>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-start"><i data-lucide="pie-chart" class="h-6 w-6 text-indigo-500 mr-3 mt-1 flex-shrink-0"></i><div><strong class="text-gray-800">Real-time Fund Analytics:</strong> Track IRR, TVPI, DPI, and NAV with interactive, drill-down visualizations.</div></li>
+                            <li class="flex items-start"><i data-lucide="waves" class="h-6 w-6 text-indigo-500 mr-3 mt-1 flex-shrink-0"></i><div><strong class="text-gray-800">Liquidity Management:</strong> View cash positions, undrawn commitments, and manage redemption queues in real-time.</div></li>
+                            <li class="flex items-start"><i data-lucide="user-check" class="h-6 w-6 text-indigo-500 mr-3 mt-1 flex-shrink-0"></i><div><strong class="text-gray-800">Compliance Console:</strong> Manage investor profiles, KYC/AML status, and maintain a full on-chain audit log of all actions.</div></li>
+                        </ul>
+                    </div>
+                     <div class="fade-in" style="transition-delay: 150ms;">
+                        <img src="https://placehold.co/1200x800/f0f9ff/0c4a6e?text=GP+Dashboard+UI" alt="GP Dashboard Mockup" class="rounded-2xl shadow-lg border border-gray-200">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center mt-16 md:mt-24">
+                     <div class="md:order-2 fade-in">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">LP & HNI Investor Portal</h3>
+                        <p class="text-gray-600 mb-6">Empower your investors with unprecedented clarity. A personalized, intuitive portal designed to build trust and satisfaction.</p>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-start"><i data-lucide="user-circle-2" class="h-6 w-6 text-indigo-500 mr-3 mt-1 flex-shrink-0"></i><div><strong class="text-gray-800">Personalized Portfolio View:</strong> Track commitments, distributions, and NAV for all holdings in one place.</div></li>
+                            <li class="flex items-start"><i data-lucide="file-safe" class="h-6 w-6 text-indigo-500 mr-3 mt-1 flex-shrink-0"></i><div><strong class="text-gray-800">Secure Document Vault:</strong> 24/7 access to LPAs, K-1s, and quarterly reports in a centralized, secure repository.</div></li>
+                            <li class="flex items-start"><i data-lucide="landmark" class="h-6 w-6 text-indigo-500 mr-3 mt-1 flex-shrink-0"></i><div><strong class="text-gray-800">Integrated Tax Center:</strong> Simplify tax season with one-click access to tax forms and an auditable transaction history.</div></li>
+                        </ul>
+                    </div>
+                    <div class="md:order-1 fade-in" style="transition-delay: 150ms;">
+                        <img src="https://placehold.co/1200x800/f5f3ff/5b21b6?text=LP+Portal+UI" alt="LP Portal Mockup" class="rounded-2xl shadow-lg border border-gray-200">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Section 2: Transparency -->
+        <section id="transparency" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h3 class="text-sm font-bold uppercase text-indigo-600 tracking-widest">Trust Through Truth</h3>
+                    <p class="mt-2 text-4xl md:text-5xl font-bold tracking-tight text-gray-900">Radical Transparency, Powered by Blockchain</p>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">We replace manual processes and opaque ledgers with cryptographic certainty. Verifiable, immutable, and automated.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card p-8 fade-in">
+                        <div class="feature-icon bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center mb-6">
+                            <i data-lucide="webhook" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Immutable Ledger of Record</h3>
+                        <p class="text-gray-600">Every transaction, from capital calls to distributions, is permanently recorded on a shared, unalterable ledger, eliminating reconciliation errors and fraud risk.</p>
+                    </div>
+                    <div class="feature-card p-8 fade-in" style="transition-delay: 150ms;">
+                         <div class="feature-icon bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center mb-6">
+                            <i data-lucide="calculator" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Automated Waterfall Engine</h3>
+                        <p class="text-gray-600">Complex distribution waterfalls are encoded into smart contracts, ensuring instant, error-free, and fully auditable profit allocation based on the LPA.</p>
+                    </div>
+                    <div class="feature-card p-8 fade-in" style="transition-delay: 300ms;">
+                         <div class="feature-icon bg-indigo-100 text-indigo-600 rounded-lg w-12 h-12 flex items-center justify-center mb-6">
+                            <i data-lucide="repeat" class="h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-gray-900">Integrated Secondary Market</h3>
+                        <p class="text-gray-600">Provide controlled liquidity for LPs within a compliant, GP-governed environment. All trades are settled instantly and recorded on-chain.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Section 3: AI -->
+        <section id="ai" class="py-20 md:py-32 bg-white border-y border-gray-200">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <h3 class="text-sm font-bold uppercase text-indigo-600 tracking-widest">System of Intelligence</h3>
+                        <p class="mt-2 text-4xl md:text-5xl font-bold tracking-tight text-gray-900">Gain The Intelligent Edge</p>
+                        <p class="mt-4 text-xl text-gray-600">Go beyond historical reporting. Our AI add-ons provide predictive insights, hyper-automation, and proactive risk management to create a true competitive advantage.</p>
+                        <div class="mt-8 space-y-6">
+                            <div class="flex">
+                                <i data-lucide="brain-circuit" class="h-8 w-8 text-indigo-500 mr-4 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-900">Predictive Analytics & Scenario Modeling</h4>
+                                    <p class="text-gray-600">Forecast asset performance and stress-test your portfolio against market shocks. Make data-driven decisions about valuation and exit timing.</p>
+                                </div>
+                            </div>
+                             <div class="flex">
+                                <i data-lucide="scan-search" class="h-8 w-8 text-indigo-500 mr-4 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-900">Automated Due Diligence</h4>
+                                    <p class="text-gray-600">Our NLP engine scans data rooms in minutes, extracting key metrics and identifying risks to accelerate your deal screening process.</p>
+                                </div>
+                            </div>
+                             <div class="flex">
+                                <i data-lucide="shield-check" class="h-8 w-8 text-indigo-500 mr-4 flex-shrink-0"></i>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-900">Proactive Compliance & AML</h4>
+                                    <p class="text-gray-600">AI monitors transactions in real-time, detecting complex patterns of illicit activity far more effectively than rules-based systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fade-in" style="transition-delay: 150ms;">
+                         <img src="https://placehold.co/1000x1000/1f2937/a5b4fc?text=AI+Analytics" alt="AI Brain Graphic" class="rounded-2xl shadow-lg border border-gray-200">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 fade-in">
+                    <h3 class="text-sm font-bold uppercase text-indigo-600 tracking-widest">Pragmatic Execution</h3>
+                    <p class="mt-2 text-4xl md:text-5xl font-bold tracking-tight text-gray-900">Phased Implementation Roadmap</p>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Deliver value incrementally, de-risking the project and aligning investment with demonstrated market demand.</p>
+                </div>
+
+                <div class="relative fade-in">
+                    <!-- The connecting line -->
+                    <div class="hidden md:block absolute top-5 left-1/2 w-0.5 h-full -translate-x-1/2 bg-gray-200"></div>
+
+                    <!-- Phase 1 -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-start mb-12">
+                        <div class="md:text-right md:pr-8 mb-4 md:mb-0">
+                            <div class="text-sm font-semibold text-indigo-600">Phase 1: MVP</div>
+                            <div class="text-xl font-bold text-gray-800">4-6 Months</div>
+                        </div>
+                        <div class="relative md:pl-8">
+                            <div class="hidden md:block absolute top-3 left-0 w-4 h-4 bg-indigo-500 rounded-full -translate-x-[19px] ring-8 ring-gray-50"></div>
+                            <div class="card p-6">
+                                <h3 class="text-xl font-bold text-gray-900">Core Portal & Reporting</h3>
+                                <p class="text-gray-600 mt-2">Launch the LP Investor Portal with dashboard reporting and a secure document vault to deliver immediate value and transparency to existing investors.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-start mb-12">
+                        <div class="md:text-right md:pr-8 mb-4 md:mb-0 md:order-2">
+                             <div class="text-sm font-semibold text-indigo-600">Phase 2</div>
+                             <div class="text-xl font-bold text-gray-800">9-12 Months</div>
+                        </div>
+                        <div class="relative md:order-1 md:text-right md:pr-8">
+                             <div class="hidden md:block absolute top-3 right-0 w-4 h-4 bg-indigo-500 rounded-full translate-x-[19px] ring-8 ring-gray-50"></div>
+                             <div class="card p-6">
+                                 <h3 class="text-xl font-bold text-gray-900">On-Chain Infrastructure</h3>
+                                 <p class="text-gray-600 mt-2">Deploy the GP Command Center, on-chain ledger, and automated distribution waterfall smart contracts to build the core operational engine.</p>
+                             </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Phase 3 -->
+                    <div class="md:grid md:grid-cols-2 md:gap-8 items-start">
+                        <div class="md:text-right md:pr-8 mb-4 md:mb-0">
+                             <div class="text-sm font-semibold text-indigo-600">Phase 3</div>
+                             <div class="text-xl font-bold text-gray-800">12-18+ Months</div>
+                        </div>
+                        <div class="relative md:pl-8">
+                            <div class="hidden md:block absolute top-3 left-0 w-4 h-4 bg-indigo-500 rounded-full -translate-x-[19px] ring-8 ring-gray-50"></div>
+                             <div class="card p-6">
+                                 <h3 class="text-xl font-bold text-gray-900">Advanced Features</h3>
+                                 <p class="text-gray-600 mt-2">Roll out the compliant secondary market and integrate the full suite of AI-driven tools for predictive analytics and scenario modeling.</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 bg-white">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 FinaValley Solutions. All Rights Reserved.</p>
+            <p class="mt-2">This is a conceptual showcase based on the FinValley 9.0 case study.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Lucide icons
+            lucide.createIcons();
+
+            // Fade-in animations on scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToFadeIn = document.querySelectorAll('.fade-in');
+            elementsToFadeIn.forEach(el => observer.observe(el));
+            
+            // Smooth scrolling for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                         targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
