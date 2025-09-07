@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinaValley | Tokenized Private Markets Solution</title>
+    <title>FinValley | Tokenized Private Markets Solution</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,24 +64,30 @@
 <body class="antialiased">
 
     <!-- Header Navigation -->
-    <header id="header" class="glass-nav fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-             <h1 class="text-xl font-bold tracking-tighter text-gray-900">FinaValley <span class="gradient-text">Solutions</span></h1>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#dashboards" class="text-gray-500 hover:text-gray-900 transition-colors">Dashboards</a>
-                <a href="#transparency" class="text-gray-500 hover:text-gray-900 transition-colors">Transparency</a>
-                <a href="#ai" class="text-gray-500 hover:text-gray-900 transition-colors">AI Edge</a>
-                <a href="#roadmap" class="text-gray-500 hover:text-gray-900 transition-colors">Roadmap</a>
-            </nav>
-            <button class="md:hidden text-gray-800">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-            </button>
+    <nav class="glass-nav sticky top-0 z-50 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-bold text-xl gradient-text">FinValley</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#dashboards" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Dashboards</a>
+                        <a href="#transparency" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Transparency</a>
+                        <a href="#ai" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">AI Edge</a>
+                        <a href="#roadmap" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Roadmap</a>
+                    </div>
+                </div>
+                 <button class="md:hidden text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main>
         <!-- Hero Section -->
@@ -94,7 +100,7 @@
                      <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight gradient-text mb-6">
                         Radically Transparent. Intelligently Powered.
                     </h2>
-                    <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 mb-10">
+                    <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 mt-10 mb-10">
                         A showcase of institutional-grade reporting, on-chain transparency, and predictive AI designed to unlock efficiency, liquidity, and trust for GPs and LPs in tokenized private markets.
                     </p>
                      <a href="#dashboards"
@@ -251,12 +257,12 @@
 
                     <!-- Phase 2 -->
                     <div class="md:grid md:grid-cols-2 md:gap-8 items-start mb-12">
-                        <div class="md:text-right md:pr-8 mb-4 md:mb-0 md:order-2">
+                         <div class="md:text-right md:pr-8 mb-4 md:mb-0">
                              <div class="text-sm font-semibold text-indigo-600">Phase 2</div>
                              <div class="text-xl font-bold text-gray-800">9-12 Months</div>
                         </div>
-                        <div class="relative md:order-1 md:text-right md:pr-8">
-                             <div class="hidden md:block absolute top-3 right-0 w-4 h-4 bg-indigo-500 rounded-full translate-x-[19px] ring-8 ring-gray-50"></div>
+                        <div class="relative md:pl-8">
+                             <div class="hidden md:block absolute top-3 left-0 w-4 h-4 bg-indigo-500 rounded-full -translate-x-[19px] ring-8 ring-gray-50"></div>
                              <div class="card p-6">
                                  <h3 class="text-xl font-bold text-gray-900">On-Chain Infrastructure</h3>
                                  <p class="text-gray-600 mt-2">Deploy the GP Command Center, on-chain ledger, and automated distribution waterfall smart contracts to build the core operational engine.</p>
@@ -286,8 +292,7 @@
     <!-- Footer -->
     <footer class="border-t border-gray-200 bg-white">
         <div class="container mx-auto px-6 py-8 text-center text-gray-500 text-sm">
-            <p>&copy; 2025 FinaValley Solutions. All Rights Reserved.</p>
-            <p class="mt-2">This is a conceptual showcase based on the FinValley 9.0 case study.</p>
+            <p class="text-center text-sm text-gray-500">Team Purple Reign for IVP - FinValley 9.0</p>
         </div>
     </footer>
 
