@@ -123,27 +123,23 @@
 <body class="antialiased">
 
     <!-- Header -->
-    <header class="glass-nav fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold tracking-tighter text-gray-900">Project <span class="gradient-text">Golden Source</span></h1>
-            <nav class="hidden md:flex space-x-8 items-center">
-                <a href="#problem" class="text-gray-500 hover:text-gray-900 transition-colors">The Challenge</a>
-                <a href="#solution" class="text-gray-500 hover:text-gray-900 transition-colors">The Solution</a>
-                <a href="#roi" class="text-gray-500 hover:text-gray-900 transition-colors">The ROI</a>
-                <a href="#roadmap" class="text-gray-500 hover:text-gray-900 transition-colors">The Roadmap</a>
-                <a href="#request"
-                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">Request
-                    Approval</a>
-            </nav>
-            <button class="md:hidden text-gray-800">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-            </button>
+    <nav class="glass-nav sticky top-0 z-50 w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="font-bold text-xl gradient-text">FinValley</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#problem" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">The Challenge</a>
+                        <a href="#solution" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">The Solution</a>
+                        <a href="#roi" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">The ROI</a>
+                        <a href="#roadmap" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">The Roadmap</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main>
         <!-- Hero Section -->
@@ -239,8 +235,8 @@
                 <!-- Architecture Diagram -->
                 <div class="fade-in">
                     <div class="bg-gray-50 p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200">
-                         <div class="overflow-x-auto">
-                            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 min-w-[1000px] md:min-w-full">
+                         <div>
+                            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-1 w-full">
                                 <!-- Sources -->
                                 <div class="architecture-group flex flex-col gap-2 items-center text-center">
                                     <div class="font-bold text-lg mb-2 text-gray-800">Data Sources</div>
@@ -252,11 +248,11 @@
                                     </div>
                                 </div>
                                 
-                                <svg width="80" height="20" viewBox="0 0 80 20" class="architecture-arrow hidden md:block" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10H79M79 10L70 1M79 10L70 19" stroke-width="2"/></svg>
+                                <svg width="30" height="20" viewBox="0 0 30 20" class="architecture-arrow hidden md:block" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10H29M29 10L20 1M29 10L20 19" stroke-width="2"/></svg>
                                 <svg width="20" height="80" viewBox="0 0 20 80" class="architecture-arrow md:hidden" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0V79M10 79L1 70M10 79L19 70" stroke-width="2"/></svg>
                                 
                                 <!-- Core Platform -->
-                                <div class="flex flex-col items-center border-2 border-dashed border-indigo-300 p-6 rounded-2xl text-center">
+                                <div class="flex flex-col items-center border-2 border-dashed border-indigo-300 pt-16 pb-12 px-4 rounded-2xl text-center">
                                     <div class="font-bold text-lg mb-4 text-gray-800">Core Platform</div>
                                     <div class="flex flex-wrap justify-center gap-4">
                                         <div class="flex flex-col items-center architecture-group">
@@ -270,7 +266,7 @@
                                     </div>
                                 </div>
                                 
-                               <svg width="80" height="20" viewBox="0 0 80 20" class="architecture-arrow hidden md:block" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10H79M79 10L70 1M79 10L70 19" stroke-width="2"/></svg>
+                               <svg width="30" height="20" viewBox="0 0 30 20" class="architecture-arrow hidden md:block" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 10H29M29 10L20 1M29 10L20 19" stroke-width="2"/></svg>
                                 <svg width="20" height="80" viewBox="0 0 20 80" class="architecture-arrow md:hidden" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 0V79M10 79L1 70M10 79L19 70" stroke-width="2"/></svg>
 
                                 <!-- Consumption -->
@@ -290,7 +286,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- ROI Section -->
         <section id="roi" class="py-20 md:py-32">
@@ -446,23 +441,11 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section id="request" class="py-20 md:py-32 bg-white">
-             <div class="container mx-auto px-6 text-center fade-in">
-                  <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">The Time for Action is Now</h2>
-                  <p class="max-w-3xl mx-auto mt-4 text-gray-600 text-lg">
-                      A vote for Project Golden Source is a vote for a more efficient, secure, and competitive future for our firm. We formally recommend the Operating Committee approve this initiative and allocate the necessary budget to begin Phase 1.
-                  </p>
-                  <button class="mt-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold py-4 px-10 rounded-full text-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105">
-                      Approve Project Golden Source
-                  </button>
-             </div>
-        </section>
     </main>
     
     <footer class="border-t border-gray-200 bg-gray-50">
         <div class="container mx-auto px-6 py-8 text-center text-gray-500">
-            <p>&copy; 2025. This is a confidential internal proposal for the Operating Committee.</p>
+            <p class="text-center text-sm text-gray-500">Team Purple Reign for IVP - FinValley 9.0</p>
         </div>
     </footer>
 
